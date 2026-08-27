@@ -1,10 +1,12 @@
-import { apiFetch } from "./utils/fetch";
-
-const response = await apiFetch(1);
-console.log(response);
+import CatFacts from "./components/CatFacts";
 
 const App = () => {
-  return <h1>TS Zod Fetch</h1>;
+  return (
+    <div>
+      <h1>TS Zod Fetch</h1>
+      <CatFacts />
+    </div>
+  );
 };
 
 export { App };
