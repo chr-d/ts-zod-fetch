@@ -1,3 +1,4 @@
+import z from "zod";
 import { apiSchema, type ApiResponse } from "../schemas";
 
 const apiFetch = async (page: number): Promise<ApiResponse | null> => {
@@ -13,7 +14,8 @@ const apiFetch = async (page: number): Promise<ApiResponse | null> => {
     const result = apiSchema.safeParse(json);
 
     if (!result.success) {
-      throw new Error("Validation failed:", result.error);
+      console.error("Validation failed:", z.flattenError(result.error));
+      return null;
     }
 
     return result.data;
