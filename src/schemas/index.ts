@@ -28,5 +28,5 @@ const apiSchema = z.object({
   total: z.number(),
 });
 
-type apiResponse = z.infer<typeof apiSchema>;
-export { apiSchema, type apiResponse };
+type ApiResponse = z.infer<typeof apiSchema>;
+export { apiSchema, type ApiResponse };
